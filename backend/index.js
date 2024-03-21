@@ -23,7 +23,7 @@ conn.on('error', () => {
 app.use(express.json()); //for parsing data
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:5173'
+    origin: ['http://localhost:5173','https://weathr-apps.netlify.app']
 }));
 app.use(cookieParser()) //for parsing cookies
 
