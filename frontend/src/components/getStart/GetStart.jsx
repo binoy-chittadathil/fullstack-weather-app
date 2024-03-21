@@ -3,7 +3,7 @@ import LoginPopupWindow from '../login/LoginPopupWindow'
 
 function GetStart() {
     return (
-        <div className='flex flex-col items-center justify-center gap-10 h-screen px-3 bg-[url("weatherBanner.jpg")]'>
+        <div className='flex flex-col items-center justify-center gap-10 h-screen px-3 bg-[url("/weatherBanner.jpg")]'>
             <div className='text-center text-5xl font-bold'>
                 <h1 className='text-white'>Weather</h1>
                 <h1 className='text-white'>App</h1>
