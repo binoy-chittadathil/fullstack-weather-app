@@ -17,7 +17,7 @@ function WeatherBanner() {
 
     const apiKey = 'fb897f8961c15daa0c50812a6ce4180c';
     const units = 'metric';
-    const GeoApiURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+    const GeoApiURL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
 
     useEffect(() => {
         getForeCastData();

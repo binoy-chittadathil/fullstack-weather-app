@@ -71,7 +71,11 @@ const userAuthentication = (req, res) => {
 // function for user logout
 
 const userLogout = (req, res) => {
-    res.cookie('token', '').json(true);
+    try{
+        res.cookie('token', '').json(true);
+    }catch(err){
+        res.status(500).json(err)
+    }
 };
 
 
