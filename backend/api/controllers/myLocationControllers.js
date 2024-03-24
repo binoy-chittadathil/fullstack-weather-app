@@ -67,7 +67,19 @@ const getMyLocation = (req, res) => {
     }
 }
 
+
+// function for delete cart items
+const deleteCartItem = async (req, res) => {
+    const { place } = req.params;
+    await MyLocation.deleteOne({ place }).then(() => {
+        res.status(200).json({ message: 'successfully deleted' })
+    }).catch(err => {
+        res.status(501).json({ error: 'no data deleted', err })
+    })
+};
+
 module.exports = {
     addLocation,
-    getMyLocation
+    getMyLocation,
+    deleteCartItem
 }

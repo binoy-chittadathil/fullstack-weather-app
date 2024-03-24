@@ -3,6 +3,7 @@ import { FaLocationCrosshairs } from "react-icons/fa6";
 import { WeatherContext } from '../context/WeatherContextProvider';
 import checkWeatherLogo from '../controllers/weatherController'
 import axios from 'axios';
+import foreCastData from '../controllers/foreCastData';
 
 function WeatherBanner() {
     const [cityName, setCityName] = useState('');
@@ -49,15 +50,12 @@ function WeatherBanner() {
 
     // get weather data
     async function getForeCastData() {
-        const searchApiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latti}&lon=${longi}&units=${units}&appid=${apiKey}`;
-        const response = await fetch(searchApiURL);
-        const data = await response.json();
+        const { dayForecast } = await foreCastData(latti, longi);
+        setWeatherForeCastData(dayForecast);
 
-        const filteredData = data.list.filter((item, index) => index % 8 === 0);  // Filter data to include only one data point per day
-        setWeatherForeCastData(filteredData);
         // output data using date searching
         try {
-            const searchedData = await filteredData.find((data) => data.dt_txt.split(' ')[0] === date)
+            const searchedData = await dayForecast.find((data) => data.dt_txt.split(' ')[0] === date)
             setTemparature(searchedData.main.temp);
             setNewDate(searchedData.dt_txt.split(' ')[0]);
             setHumidity(searchedData.main.humidity);

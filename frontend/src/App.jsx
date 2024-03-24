@@ -10,7 +10,7 @@ import Weather from './components/weather/Weather'
 import WeatherContextProvider from './components/context/WeatherContextProvider'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import MyLocation from './components/myLocation/MyLocation'
-axios.defaults.baseURL = 'https://fullstack-weather-app.onrender.com';   //'http://localhost:8080'
+axios.defaults.baseURL = 'http://localhost:8080'  //'https://fullstack-weather-app.onrender.com';  
 axios.defaults.withCredentials = true;  //Automatically include cookies in requests
 function App() {
 

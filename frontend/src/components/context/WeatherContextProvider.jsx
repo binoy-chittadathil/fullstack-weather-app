@@ -27,7 +27,6 @@ function WeatherContextProvider({ children }) {
   useEffect(() => {
     axios.get('/my-location').then(({ data }) => {
       setMyLocationData(data);
-      console.log(data);
     }).catch(err => {
       console.error(err);
     })
