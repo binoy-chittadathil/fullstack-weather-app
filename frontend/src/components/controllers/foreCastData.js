@@ -6,7 +6,7 @@ async function foreCastData(latti, longi) {
     const response = await fetch(searchApiURL);
     const threeHourForecast = await response.json();
 
-    const dayForecast = threeHourForecast.list.filter((item, index) => index % 8 === 0);
+    const dayForecast = await threeHourForecast.list.filter((item, index) => index % 8 === 0);
     return { threeHourForecast, dayForecast }
 }
 

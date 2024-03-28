@@ -9,7 +9,7 @@ router.post('/', addLocation);
 router.get('/', getMyLocation);
 
 // delete my location data
-router.delete('/:place', deleteCartItem)
+router.delete('/:locationId', deleteCartItem)
 
 
 module.exports = router

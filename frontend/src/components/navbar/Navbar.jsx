@@ -35,7 +35,7 @@ function Navbar() {
 
 
     return (
-        <div className="navbar sm:px-3 shadow-sm fixed bg-gray-100">
+        <div className="navbar sm:px-3 shadow-sm fixed bg-gray-100 z-10">
             <div className="flex-1">
                 <Link to={user ? '/weather' : '/'} className="btn btn-ghost text-xl">Weather App</Link>
             </div>
